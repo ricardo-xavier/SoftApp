@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="xavier.ricardo.softapp.AssinaturaActivity" >
+
+    <view
+        android:id="@+id/vwAssinatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="xavier.ricardo.softapp.DrawView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/btLimpar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="limpa"
+            android:text="@string/limpa" />
+
+        <Button
+            android:id="@+id/btCancelarAssinatura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cancela"
+            android:text="@string/cancela" />
+        
+        <Button
+            android:id="@+id/btGravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="grava"
+            android:text="@string/grava" />
+        
+    </LinearLayout>
+
+</LinearLayout>
