@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_action_camera_light" />
+            android:src="@android:drawable/ic_menu_camera" />
         
     </LinearLayout>
 

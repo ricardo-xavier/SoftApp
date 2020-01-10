@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.softplacemoveis.softapp">
+    package="xavier.ricardo.softapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -15,13 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".tasks.NotificadorService" />
+        <service android:name="xavier.ricardo.softapp.tasks.NotificadorService" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".LoginActivity"
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-0381609228541841~8494761522"/>
+
+        <activity android:name="xavier.ricardo.softapp.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,48 +41,48 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="xavier.ricardo.softapp.MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".EnderecoActivity"
+            android:name="xavier.ricardo.softapp.EnderecoActivity"
             android:label="@string/title_activity_endereco"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".CalendarActivity"
+            android:name="xavier.ricardo.softapp.CalendarActivity"
             android:label="@string/title_activity_calendar" >
         </activity>
 
         <activity
-            android:name=".DetalhesActivity"
+            android:name="xavier.ricardo.softapp.DetalhesActivity"
             android:label="@string/title_activity_detalhes"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".AnexoActivity"
+            android:name="xavier.ricardo.softapp.AnexoActivity"
             android:label="@string/title_activity_anexo"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".EncerrarActivity"
+            android:name="xavier.ricardo.softapp.EncerrarActivity"
             android:label="@string/title_activity_encerrar"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".AssinaturaActivity"
+            android:name="xavier.ricardo.softapp.AssinaturaActivity"
             android:label="@string/title_activity_assinatura"
             android:screenOrientation="portrait" >
         </activity>
 
         <receiver
-            android:name=".NotificationReceiver"
+            android:name="xavier.ricardo.softapp.NotificationReceiver"
             android:enabled="true" />
 
     </application>
