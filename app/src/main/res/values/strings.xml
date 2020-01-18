@@ -32,5 +32,6 @@
     <string name="documento">Documento</string>
     <string name="email">Email</string>
     <string name="title_activity_assinatura">Assinatura</string>
+    <string name="wait">Aguarde...</string>
 
 </resources>
