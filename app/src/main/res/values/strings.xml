@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">SoftApp</string>
-    <string name="versao">SoftApp v1.21</string>
+    <string name="versao">SoftApp v1.4</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="usuario">Usuário</string>

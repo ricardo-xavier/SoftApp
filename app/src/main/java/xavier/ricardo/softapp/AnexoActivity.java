@@ -37,11 +37,15 @@ public class AnexoActivity extends Activity {
 		
 		for (Anexo anexo : compromisso.getAnexos()) {
 			if (anexo.getCodigo().equals(codigo)) {
+
+				boolean jpg = anexo.getDescricao().contains(".jpg");
 					
-				String pdf = String.format("http://ricardoxavier.no-ip.org/soft/%s%d%s.pdf",
-						compromisso.getCodFornecedor(), compromisso.getCodOrcamento(), codigo.replace(" ", ""));					
+				String arq = String.format("http://ricardoxavier.no-ip.org/soft/%s%d%s.%s",
+						compromisso.getCodFornecedor(), compromisso.getCodOrcamento(),
+						codigo.replace(" ", ""),
+						jpg ? "jpg" : "pdf");
 					
-				Uri uri = Uri.parse(pdf);
+				Uri uri = Uri.parse(arq);
 				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intent);
 			}

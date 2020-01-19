@@ -29,9 +29,15 @@ public class FotoTask extends AsyncTask<String, Void, String> {
     private ProgressDialog progress;
     private String image;
     private String id;
+    private String fornecedor;
+    private String data;
+    private String orcamento;
 
-    public FotoTask(MainActivity context, String image, String id) {
+    public FotoTask(MainActivity context, String fornecedor, String data, String orcamento, String image, String id) {
         this.context = context;
+        this.fornecedor = fornecedor;
+        this.data = data;
+        this.orcamento = orcamento;
         this.image = image;
         this.id = id;
     }
@@ -69,6 +75,9 @@ public class FotoTask extends AsyncTask<String, Void, String> {
             HttpPost httpPost = new HttpPost(url);
 
             Imagem req = new Imagem();
+            req.setFornecedor(fornecedor);
+            req.setData(data);
+            req.setOrcamento(Integer.parseInt(orcamento));
             req.setImage64(image);
             req.setId(id);
 

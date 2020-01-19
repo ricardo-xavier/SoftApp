@@ -18,6 +18,7 @@ import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -308,7 +309,16 @@ public class MainActivity extends Activity {
                     String base64 = Base64.encodeToString(bArray, Base64.DEFAULT);
                     file.delete();
 
-                    new FotoTask(this, base64, timeStamp).execute();
+                    Button btn = (Button) findViewById(R.id.btDetalhes);
+                    String[] partes = btn.getText().toString().split(" ");
+                    if (partes.length >= 3) {
+                        String fornecedor = partes[0].trim();
+                        // 0123456789
+                        // dd/mm/yyyy
+                        String dt = partes[1].substring(6, 10) + "-" + partes[1].substring(3, 5) + "-" + partes[1].substring(0, 2);
+                        String orcamento = partes[2].split("-")[0];
+                        new FotoTask(this, fornecedor, dt, orcamento, base64, timeStamp).execute();
+                    }
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -332,6 +342,10 @@ public class MainActivity extends Activity {
     }
 
     public void onTaskResult(String result) {
+        if (result.startsWith("ok")) {
+            result = "Foto anexada ao orçamento";
+        }
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 
 

@@ -133,7 +133,7 @@ public class AgendaAdapter extends BaseAdapter {
 				compromisso.getEmail() != null ? compromisso.getEmail() : "",
 				compromisso.getJson() != null ? compromisso.getJson() : "");
 		btEncerrar.setTag(chave);
-		
+
 		Button btAnexos = (Button) v.findViewById(R.id.btAnexos);
 		if ((compromisso.getAnexos() != null)
 				&& (compromisso.getAnexos().size() > 0)) {
