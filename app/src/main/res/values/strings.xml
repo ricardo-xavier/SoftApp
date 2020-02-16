@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">SoftApp</string>
-    <string name="versao">SoftApp v1.4</string>
+    <string name="versao">SoftApp v1.5</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="usuario">Usuário</string>
@@ -19,6 +19,7 @@
     <string name="title_activity_calendar">SOFTPLACE-Agenda</string>
     <string name="title_activity_detalhes">Dados do Pedido</string>
     <string name="title_activity_anexo">Anexos</string>
+    <string name="title_activity_nf">Busca por NF</string>
     <string name="encerrar">Encerrar</string>
     <string name="confirma">Confirmar</string>
     <string name="cancela">Cancelar</string>

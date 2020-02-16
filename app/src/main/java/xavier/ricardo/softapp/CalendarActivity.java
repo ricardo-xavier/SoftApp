@@ -19,9 +19,11 @@ import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import xavier.ricardo.softapp.R;
@@ -262,5 +264,30 @@ public class CalendarActivity extends Activity {
 			}
 		});
 		
-	}	
+	}
+
+	public void nf(View v) {
+		Intent intent = new Intent(this, NFActivity.class);
+		startActivityForResult(intent, 1);
+	}
+
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		CalendarActivity contexto = this;
+		if (resultCode == RESULT_OK) {
+			String usuarioData = data.getStringExtra("usuarioData");
+			String[] partes = usuarioData.split("\\s+");
+			if (partes.length > 1) {
+				responsavel = partes[0];
+				String ymd = partes[1];
+				String y = ymd.substring(0, 4);
+				String m = ymd.substring(5, 7);
+				Calendar mesAno = Calendar.getInstance();
+				mesAno.set(Integer.parseInt(y), Integer.parseInt(m), 1);
+				new AgendaMesTask(contexto, responsavel, mesAno).execute();
+			}
+		}
+	}
 }

@@ -21,7 +21,7 @@ public class DrawView extends View {
 	
 	public DrawView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		
+
         setOnTouchListener(new OnTouchListener() { 
         	@Override 
         	public boolean onTouch(View view, MotionEvent event) { 
