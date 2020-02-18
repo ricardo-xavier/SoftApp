@@ -284,10 +284,19 @@ public class CalendarActivity extends Activity {
 				String ymd = partes[1];
 				String y = ymd.substring(0, 4);
 				String m = ymd.substring(5, 7);
+                String d = ymd.substring(8, 10);
+
+                /*
 				Calendar mesAno = Calendar.getInstance();
 				mesAno.set(Integer.parseInt(y), Integer.parseInt(m), 1);
 				new AgendaMesTask(contexto, responsavel, mesAno).execute();
-			}
+                 */
+
+                Intent intent = new Intent(contexto, MainActivity.class);
+                intent.putExtra("usuario", responsavel);
+                intent.putExtra("data", d + "/" + m + "/" + y);
+                startActivity(intent);
+            }
 		}
 	}
 }
