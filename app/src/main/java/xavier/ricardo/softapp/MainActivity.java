@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -256,6 +258,8 @@ public class MainActivity extends Activity {
         String[] partes = chave.split(";");
         String usuario = partes[0].trim();
         String dt = partes[1].trim();
+        ImageView im = new ImageView();
+        Image img
         for (Compromisso compromisso : agenda.getCompromissos()) {
             if (compromisso.getUsuario().trim().equals(usuario)
                     && compromisso.getData().trim().equals(dt)) {
@@ -313,11 +317,12 @@ public class MainActivity extends Activity {
                     String[] partes = btn.getText().toString().split(" ");
                     if (partes.length >= 3) {
                         String fornecedor = partes[0].trim();
-                        // 0123456789
-                        // dd/mm/yyyy
-                        String dt = partes[1].substring(6, 10) + "-" + partes[1].substring(3, 5) + "-" + partes[1].substring(0, 2);
-                        String orcamento = partes[2].split("-")[0];
-                        new FotoTask(this, fornecedor, dt, orcamento, base64, timeStamp).execute();
+                        String[] dmy = partes[1].split("/");
+                        if (dmy.length == 3) {
+                            String dt = String.format("%04d-%02d-%02d", Integer.parseInt(dmy[2]), Integer.parseInt(dmy[1]), Integer.parseInt(dmy[0]));
+                            String orcamento = partes[2].split("-")[0];
+                            new FotoTask(this, fornecedor, dt, orcamento, base64, timeStamp).execute();
+                        }
                     }
 
                 } catch (IOException e) {

@@ -17,11 +17,13 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo2"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".NFActivity"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".TesteActivity"></activity>
+        <activity
+            android:name=".NFActivity"
             android:label="@string/title_activity_nf"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -30,7 +32,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <service android:name=".tasks.NotificadorService" />
@@ -61,30 +63,30 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EnderecoActivity"
             android:label="@string/title_activity_endereco"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CalendarActivity"
-            android:label="@string/title_activity_calendar"></activity>
+            android:label="@string/title_activity_calendar" />
         <activity
             android:name=".DetalhesActivity"
             android:label="@string/title_activity_detalhes"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AnexoActivity"
             android:label="@string/title_activity_anexo"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EncerrarActivity"
             android:label="@string/title_activity_encerrar"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AssinaturaActivity"
             android:label="@string/title_activity_assinatura"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".NotificationReceiver"
